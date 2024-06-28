@@ -12,11 +12,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # general library installations tools for development
 # application libraries are brought in as package dependents
 RUN apt-get update && apt-get install -y ros-${ROS_DISTRO}-plotjuggler \
-                                         ros-${ROS_DISTRO}-plotjuggler-ros
-
-#RUN apt-get update && \
-#    apt-get install -y libqt5gui5 && \
-#    rm -rf /var/lib/apt/lists/*
-#ENV QT_DEBUG_PLUGINS=1
+                                         ros-${ROS_DISTRO}-plotjuggler-ros \
+                   && rm -rf /var/lib/apt/lists/*
 
 CMD ["rosrun", "plotjuggler", "plotjuggler"]   
